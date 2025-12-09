@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tic Tac Toe — Pastel Confetti</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="bgCanvas"></canvas>
+  <canvas id="confettiCanvas"></canvas>
+
+  <main class="app" role="main">
+    <header>
+      <div class="logo">TTT</div>
+      <div>
+        <h1>Tic Tac Toe — Pastel Edition</h1>
+        <p class="sub">Play local 2-player. Win triggers a burst of confetti ✨</p>
+      </div>
+    </header>
+
+    <section id="game">
+      <div class="board" id="board"></div>
+
+      <div class="controls">
+        <button class="btn" id="restart">Restart</button>
+        <div class="status" id="status">Current: <strong id="turn">X</strong></div>
+      </div>
+
+      <footer>Made with pastel vibes — animated background floats X & O</footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
