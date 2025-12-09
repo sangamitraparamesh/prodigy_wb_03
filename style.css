@@ -1,0 +1,66 @@
+:root{
+  --bg:#f7f6fc;
+  --card:#fff;
+  --accent-1: #ffd6e0;
+  --accent-2: #e6f7ff;
+  --accent-3: #eaffea;
+  --accent-4: #fff3cc;
+  --text:#2b2b2b;
+  --muted:#6b6b6b;
+  --glass: rgba(255,255,255,0.6);
+}
+
+html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+body{
+  background: linear-gradient(180deg,var(--bg),#fbfbff);
+  color:var(--text);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+
+#bgCanvas, #confettiCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+.app{
+  z-index:1;min-width:320px;width:420px;max-width:92vw;
+  background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(250,250,255,0.6));
+  border-radius:20px;padding:24px;box-shadow:0 8px 30px rgba(17,24,39,0.08);
+  backdrop-filter: blur(6px);
+}
+
+header{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:20px}
+h1{font-size:18px;margin:0}
+p.sub{margin:0;color:var(--muted);font-size:13px}
+
+.board{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0;
+}
+
+.cell{
+  width:120px;height:120px;min-width:76px;min-height:76px;
+  display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:800;color:var(--text);
+  border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.45));
+  box-shadow: 0 6px 14px rgba(16,24,40,0.06), inset 0 -4px 8px rgba(0,0,0,0.02);
+  transition:transform .18s ease, box-shadow .18s ease;
+  cursor:pointer;user-select:none;
+}
+.cell:hover{transform:translateY(-6px) scale(1.02); box-shadow: 0 12px 30px rgba(16,24,40,0.08)}
+.cell.taken{cursor:default;transform:none}
+
+.x{color:#ff6b9f;}
+.o{color:#5db8ff;}
+
+.controls{display:flex;gap:10px;align-items:center}
+button.btn{padding:8px 12px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accent-2),var(--accent-3));cursor:pointer;font-weight:600}
+
+.status{margin-top:6px;color:var(--muted);font-size:14px}
+
+@media (max-width:420px){.cell{height:84px;font-size:36px}}
+
+.winner{
+  animation: glow 1.2s ease-in-out infinite alternate;
+  box-shadow:0 10px 30px rgba(255,107,159,0.15), 0 2px 10px rgba(93,184,255,0.06) !important;
+}
+@keyframes glow{from{filter:drop-shadow(0 6px 12px rgba(255,107,159,0.08))}to{filter:drop-shadow(0 18px 30px rgba(255,107,159,0.18))}}
+
+footer{margin-top:10px;color:var(--muted);font-size:12px;text-align:center}
