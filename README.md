@@ -1,6 +1,6 @@
 # prodigy_wb_03
 
-https://sangamitraparamesh.github.io/prodigy_wb_03/
+https://sangamitraparamesh.github.io/tictactoe/
 ---
 
 # 🎀 Tic Tac Toe — Pastel Confetti Edition
